@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl">
         </div>
@@ -18,24 +18,9 @@
 <script type="text/javascript">
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'https://imgs.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-        title: '南山滑雪场',
-        desc: '美丽的南山滑雪场，非常好玩'
-      }, {
-        id: '0002',
-        imgUrl: 'https://imgs.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-        title: '南山滑雪场',
-        desc: '美丽的南山滑雪场，非常好玩'
-      }, {
-        id: '0003',
-        imgUrl: 'https://imgs.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-        title: '南山滑雪场',
-        desc: '美丽的南山滑雪场，非常好玩'
-      }]
+  props: {
+    list: {
+      type: Array
     }
   }
 }
@@ -45,13 +30,12 @@ export default {
   @import '~styles/mixins.styl'
   .title
     line-height: .8rem
-    margin-top: .2rem
     background: #eee
     text-indent: .2rem
   .item-img-wrapper
     overflow: hidden
     height: 0
-    padding-bottom: 33.9%
+    padding-bottom: 37.09%
     .item-img
       width: 100%
   .item-info
